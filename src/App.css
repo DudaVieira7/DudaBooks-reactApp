@@ -7,47 +7,9 @@
     font-family: 'Poppins', sans-serif;
 }
 
-.App-header{
-    background-color: #f0f8ff;
-    align-items: center;
-    display: flex;
-    justify-content: space-evenly;
-}
-
 li{
     list-style: none;
 }
 
-.opcoes{
-    display: flex;
-
-}
-.opcao{
-    min-width: 120px;
-    font-size: 16px;
-    display: flex;
-    justify-content: center;
-    text-align: center;
-    align-items: center;
-    height: 100%;
-    cursor: pointer;
-    padding: 0 5px;
 
 
-
-}
-
-
-.icones {
-  display: flex;
-  align-items: center;
-  list-style: none;
-  gap: 20px;
-}
-
-.icone img {
-  width: 30px;
-  height: 30px;
-  object-fit: fill;
-  
-}
