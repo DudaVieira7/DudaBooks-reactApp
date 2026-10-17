@@ -1,6 +1,7 @@
 
 import Header from './assets/componentes/Header/Header';
 import Pesquisa from './assets/componentes/Pesquisa/Pesquisa';
+import UltimosLancamentos from './assets/componentes/UltimosLancamentos/UltimosLancamentos';
 
 import styled from 'styled-components';
 
@@ -17,6 +18,7 @@ function App() {
     <AppContainer>
         <Header />
         <Pesquisa/>
+       <UltimosLancamentos/>
     </AppContainer>   
         
   );
