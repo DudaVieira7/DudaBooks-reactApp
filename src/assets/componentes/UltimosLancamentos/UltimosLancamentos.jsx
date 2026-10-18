@@ -1,6 +1,8 @@
 import { livros } from './dadosUltimosLancamentos'
 import styled from 'styled-components'
 import { Titulo } from '../Titulo/Titulo'
+import CardRecomenda from '../CardRecomenda/CardRecomenda'
+import livroHarry from '../../imagens/livro1.jpg'
 
 const UltimosLancamentosContainer = styled.section`
     background-color: #EBECEE;
@@ -31,12 +33,21 @@ const Imagem = styled.img`
 function UltimosLancamentos() {
     return (
         <UltimosLancamentosContainer>
-            <Titulo cor='#f6f'>ULTIMOS LANCAMENTOS</Titulo>
+            <Titulo
+                cor='#23354b' 
+                tamanhoFont ='30px' 
+            >ULTIMOS LANCAMENTOS</Titulo>
             <NovosLivrosContainer>
                 { livros.map( livro => (
                     <Imagem src={livro.src}/>
                 ) ) }
             </NovosLivrosContainer>
+                <CardRecomenda
+                titulo={"Talvez você se interesse por:"}
+                subtitulo={"Harry Potter e o Prisioneiro de Azkaban (1999)"}
+                descricao={"Harry Potter descobre que o fugitivo Sirius Black é seu padrinho inocente, enquanto enfrenta os terríveis Dementadores em Hogwarts e usa um Vira-Tempo para salvar vidas."}
+                imagem={livroHarry}
+                />
         </UltimosLancamentosContainer>
     )
 }
