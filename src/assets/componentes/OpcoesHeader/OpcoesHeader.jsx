@@ -21,13 +21,13 @@ const Opcao = styled.li`
     
 `
 
-const textoOpcoes = ['CATEGORIAS', 'MINHA ESTANTE', 'FAVORITOS'];
+const textoOpcoes = ['CATEGORIAS', 'ESTANTE', 'FAVORITOS'];
 
 function OpcoesHeader() {
   return (
         <Opcoes>
           {textoOpcoes.map((texto) => (
-          <Link to={'/favoritos'}><Opcao><p>{texto}</p></Opcao></Link>
+          <Link to={`/${texto.toLowerCase()}`}><Opcao><p>{texto}</p></Opcao></Link>
           ))}   
         </Opcoes>
   )
