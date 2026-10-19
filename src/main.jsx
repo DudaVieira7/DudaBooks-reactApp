@@ -25,6 +25,14 @@ const GlobalStyle = createGlobalStyle`
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <GlobalStyle />
-    <App />
+    <BrowserRouter>
+      <Routes>
+        
+        <Route path='/favoritos' element={<p>Oi</p>}/>
+        <Route path='/' element={ <App /> }/>
+
+      </Routes>
+    </BrowserRouter>
+  
   </StrictMode>,
 );
