@@ -54,9 +54,13 @@ const Resultado = styled.div`
     const [livros, setLivros] = useState([])
 
     useEffect(() => {
-      const livrosAPI=  getLivros()
-      setLivros(livrosAPI)
+        featchLivros()
     }, [])
+
+    async function featchLivros(){
+      const livrosAPI= await getLivros()
+      setLivros(livrosAPI)
+    }
 
     console.log(livrosPesquisados)
     return(
