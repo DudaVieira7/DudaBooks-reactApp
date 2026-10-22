@@ -1,5 +1,5 @@
-import Header from './assets/componentes/Header/Header';
-import Pesquisa from './assets/componentes/Pesquisa/Pesquisa';
+import Header from '../componentes/Header/Header';
+import Pesquisa from '../componentes/Pesquisa/Pesquisa';
 
 import styled from 'styled-components';
 
@@ -13,7 +13,7 @@ function Favoritos() {
   return (
     <AppContainer>
         <Header />
-        <Pesquisa />
+
     </AppContainer>   
   );
 }

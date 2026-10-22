@@ -1,6 +1,5 @@
-import Header from './assets/componentes/Header/Header';
-import Pesquisa from './assets/componentes/Pesquisa/Pesquisa';
-import UltimosLancamentos from './assets/componentes/UltimosLancamentos/UltimosLancamentos';
+import Header from '../componentes/Header/Header';
+import Pesquisa from '../componentes/Pesquisa/Pesquisa';
 
 import styled from 'styled-components';
 
@@ -12,15 +11,14 @@ const AppContainer = styled.div`
 
 `
 
-function Categorias() {
+function Estante() {
   return (
     <AppContainer>
         <Header />
         <Pesquisa/>
-       <UltimosLancamentos/>
     </AppContainer>   
         
   );
 }
 
-export default Categorias
+export default Estante

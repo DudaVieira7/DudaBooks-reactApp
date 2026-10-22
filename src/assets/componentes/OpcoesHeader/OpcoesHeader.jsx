@@ -8,11 +8,11 @@ const Opcoes = styled.ul`
 `
 
 const Opcao = styled.li`
-    min-width: 120px;
+    min-width: 130px;
     font-size: 16px;
     display: flex;
-    justify-content: space-between;
-    gap: 16px;
+    justify-content: center;
+    gap: 20px;
     text-align: center;
     align-items: center;
     height: 100%;

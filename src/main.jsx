@@ -3,9 +3,9 @@ import { createRoot } from 'react-dom/client';
 import App from './App.jsx';
 import { createGlobalStyle } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Favoritos from './Favoritos.jsx';
-import Estante from './Estante.jsx';
-import Categorias from './Categorias.jsx';
+import Favoritos from './assets/rotas/Favoritos.jsx';
+import Estante from './assets/rotas/Estante.jsx';
+import Categorias from './assets/rotas/Categorias.jsx';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
