@@ -1,6 +1,5 @@
  import styled from "styled-components";
  import Input from "../Input/Input";
- import {livros} from './DadosPesquisa'
  import { useEffect, useState } from "react";
 import { getLivros } from "../../servicos/livros";
 
