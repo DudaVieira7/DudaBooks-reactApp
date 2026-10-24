@@ -2,6 +2,7 @@
  import Input from "../Input/Input";
  import { useEffect, useState } from "react";
 import { getLivros } from "../../servicos/livros";
+import { postfavorito } from "../../servicos/favoritos";
 
 const PesquisaContainer = styled.section`
 		background-image: linear-gradient(90deg, #23354b 35%, #dbedfb 165%);
@@ -61,6 +62,22 @@ const Resultado = styled.div`
       setLivros(livrosAPI)
     }
 
+
+    async function insertFavorito(id) {
+        try {
+            await postfavorito(id)
+            alert(`O livro com o id: ${id} foi adcionado a sua lista de livros favoritos`)
+            
+        } catch (error) {
+            alert(`Não foi possível adicionar: ${erro.message}`)
+        }
+        
+        
+    }
+
+
+
+
     console.log(livrosPesquisados)
     return(
         <PesquisaContainer>
@@ -69,17 +86,17 @@ const Resultado = styled.div`
             <Input 
                 placeholder="Escreva sua próxima leitura"
                 onBlur={ evento => {
-                    const textoDigitado = evento.target.value
-                    const resutadoPesquisa = livros.filter(livro => livro.nome.includes(textoDigitado))
+                    const textoDigitado = evento.target.value.toLowerCase()
+                    const resutadoPesquisa = livros.filter(livro => livro.nome.toLowerCase().includes(textoDigitado))
                     setLivrosPesquisados(resutadoPesquisa)
 
                 }}
             />
             {livrosPesquisados.map(livro =>(
-               <Resultado>
-                    <p>{livro.nome}</p>
-                    <img src={livro.src}/>
-               </Resultado>
+                <Resultado key={livro.id} onClick={() => insertFavorito(livro.id)}>
+                        <p>{livro.nome}</p>
+                        <img src={livro.src} alt={livro.nome} />
+                </Resultado>
             ))}
         </PesquisaContainer>
     )

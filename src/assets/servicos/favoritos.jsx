@@ -1,31 +1,26 @@
-const fs = require('fs')
+const URL_FAVORITOS = 'http://localhost:3000/favoritos'
 
-function getTodosFavoritos() {
-    return JSON.parse(fs.readFileSync('favoritos.json'))
+async function getFavoritos() {
+    const resposta = await fetch(URL_FAVORITOS)
+    return resposta.json()
 }
 
-function deletaFavoritoPorId(id) {
-    const favoritos = JSON.parse(fs.readFileSync('favoritos.json'))
-    const filtrados = favoritos.filter(livro => livro.id !== id)
-    fs.writeFileSync('favoritos.json', JSON.stringify(filtrados))
-    return filtrados
-}
-
-function novoLivroFavorito(id) {
-    const livros = JSON.parse(fs.readFileSync('livros.json'))
-    const favoritos = JSON.parse(fs.readFileSync('favoritos.json'))
-    const livroInserido = livros.find(livro => livro.id === id)
-
-    if (!livroInserido) {
-        throw new Error('Livro não encontrado!')
+async function postfavorito(id) {
+    const resposta = await fetch(`${URL_FAVORITOS}/${id}`, { method: 'POST' })
+    if (!resposta.ok) {
+        throw new Error(await resposta.text())
     }
-
-    const novaListaFavoritos = [...favoritos, livroInserido] // copia os favoritos e adiciona o novo livro
-    fs.writeFileSync('favoritos.json', JSON.stringify(novaListaFavoritos))
 }
 
-module.exports = {
-    getTodosFavoritos,
-    deletaFavoritoPorId,
-    novoLivroFavorito,
+async function deleteFavorito(id) {
+    const resposta = await fetch(`${URL_FAVORITOS}/${id}`, { method: 'DELETE' })
+    if (!resposta.ok) {
+        throw new Error(await resposta.text())
+    }
+}
+
+export {
+    getFavoritos,
+    postfavorito,
+    deleteFavorito
 }
